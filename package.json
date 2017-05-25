@@ -1,0 +1,23 @@
+{
+  "name": "python-interface",
+  "version": "0.1.0",
+  "description": "This is python exe interface.",
+  "main": "./app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://astams@github.com/astams/python-interface.git"
+  },
+  "author": "Seongjin Ahn <sjahn@astams.com> (https://github.com/astams)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/astams/python-intefface/issues"
+  },
+  "homepage": "https://github.com/astams/python-intefface#readme",
+  "dependencies": {
+    "python-shell": "git://github.com/astams/python-shell.git",
+    "winston": "^2.2.0"
+  }
+}
