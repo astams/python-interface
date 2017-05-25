@@ -98,7 +98,7 @@ let options = {
 
   mode: 'text',
 
-  pythonPath: "./monoIso/monoIso",
+  pythonPath: "./dist/monoIso/monoIso",
 
   pythonOptions: ['-u'],
 
