@@ -1,1 +1,1 @@
-pyinstaller --noconsole monoIso.py
+pyinstaller --onefile IDSysPythonServer.py

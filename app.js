@@ -1,5 +1,7 @@
-const PythonShell = require('python-shell');
 const winston = require("winston");
+const rpc = require('json-rpc2');
+ 
+const client = rpc.Client.$create(59870, 'localhost');
 
 const mzData = [
 568.241,
@@ -94,26 +96,19 @@ const iData = [
 ]
 
 console.log(mzData.length, iData.length);
-let options = {
-
-  mode: 'text',
-
-  pythonPath: "./dist/monoIso/monoIso",
-
-  pythonOptions: ['-u'],
-
-  scriptPath: '',
-
-  args: [mzData, iData]
-
-};
 
 
-PythonShell.run('', options, function (err, results) {
-  if (err) throw err;
 
-  for (i=0; i<mzData.length; i++) {
-    winston.info(`[${i}]:${mzData[i]},${iData[i]}:${results[i]}`);
+// Call add function on the server
+ 
+client.call('monoIso', [mzData, iData], function(err, result) {
+  if(err) {
+      console.log("error:", err);
+  } else {
+    console.log(result);
+    for (i=0; i<mzData.length; i++) {
+      winston.info(`[${i}]:${mzData[i]},${iData[i]}:${result[i]}`);
+    }
   }
 });
 
